@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{842CD9AE-5C26-4F1E-8CE7-BCF74C3E16DD}</ProjectGuid>
+    <RootNamespace>Emperor_Engine</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(IncludePath);$(DXSDK_DIR)include</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(IncludePath);$(DXSDK_DIR)include</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <PreprocessorDefinitions>EMP_USE_WINDOWS=1;EMP_USE_LINUX=0;EMP_USE_DIRECTX=1;EMP_USE_OPENGL=1</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <PreprocessorDefinitions>EMP_USE_WINDOWS=1;EMP_USE_LINUX=0;EMP_USE_DIRECTX=1;EMP_USE_OPENGL=1</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <Profile>true</Profile>
+      <AdditionalDependencies>OpenGL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="APIBlendState.cpp" />
+    <ClCompile Include="APIBuffer.cpp" />
+    <ClCompile Include="APIProgram.cpp" />
+    <ClCompile Include="APIRasterizerState.cpp" />
+    <ClCompile Include="APIShader.cpp" />
+    <ClCompile Include="APITexture.cpp" />
+    <ClCompile Include="APITextureSampler.cpp" />
+    <ClCompile Include="BlendState.cpp" />
+    <ClCompile Include="Buffers.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Defaults.cpp" />
+    <ClCompile Include="Device.cpp" />
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="GL\glew.c" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Managers.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="ShaderManager.cpp" />
+    <ClCompile Include="SOIL\image_DXT.c" />
+    <ClCompile Include="SOIL\image_helper.c" />
+    <ClCompile Include="SOIL\SOIL.c" />
+    <ClCompile Include="SOIL\stb_image_aug.c" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureSampler.cpp" />
+    <ClCompile Include="Vector.cpp" />
+    <ClCompile Include="Vertex.cpp" />
+    <ClCompile Include="Window.cpp" />
+    <ClCompile Include="WindowController.cpp" />
+    <ClInclude Include="Actor.hpp" />
+    <ClInclude Include="APIBlendState.hpp" />
+    <ClInclude Include="APIBuffer.hpp" />
+    <ClInclude Include="APIProgram.hpp" />
+    <ClInclude Include="APIRasterizerState.hpp" />
+    <ClInclude Include="APIShader.hpp" />
+    <ClInclude Include="APITexture.hpp" />
+    <ClInclude Include="APITextureSampler.hpp" />
+    <ClInclude Include="APITranslations.hpp" />
+    <ClInclude Include="BaseManager.hpp" />
+    <ClInclude Include="BlendState.hpp" />
+    <ClInclude Include="Buffers.hpp" />
+    <ClInclude Include="Camera.hpp" />
+    <ClInclude Include="Core.hpp" />
+    <ClInclude Include="Common.hpp" />
+    <ClCompile Include="Core.cpp" />
+    <ClCompile Include="Entry.cpp" />
+    <ClInclude Include="Defaults.hpp" />
+    <ClInclude Include="Device.hpp" />
+    <ClInclude Include="Engine.hpp" />
+    <ClInclude Include="Errors.hpp" />
+    <ClInclude Include="GL\glew.h" />
+    <ClInclude Include="GL\glxew.h" />
+    <ClInclude Include="GL\wglew.h" />
+    <ClInclude Include="iWindow.hpp" />
+    <ClInclude Include="iActor.hpp" />
+    <ClInclude Include="iBlendState.hpp" />
+    <ClInclude Include="iCamera.hpp" />
+    <ClInclude Include="iEngine.hpp" />
+    <ClInclude Include="iLight.hpp" />
+    <ClInclude Include="iMaterial.hpp" />
+    <ClInclude Include="iMesh.hpp" />
+    <ClInclude Include="iNode.hpp" />
+    <ClInclude Include="iResourceController.hpp" />
+    <ClInclude Include="iSceneController.hpp" />
+    <ClInclude Include="iSceneObject.hpp" />
+    <ClInclude Include="iTexture.hpp" />
+    <ClInclude Include="iTextureSampler.hpp" />
+    <ClInclude Include="Light.hpp" />
+    <ClInclude Include="Managers.hpp" />
+    <ClInclude Include="Material.hpp" />
+    <ClInclude Include="Mesh.hpp" />
+    <ClInclude Include="Node.hpp" />
+    <ClInclude Include="PlatformMS.hpp" />
+    <ClInclude Include="RasterizerState.hpp" />
+    <ClInclude Include="ResourceController.hpp" />
+    <ClInclude Include="ResourceManager.hpp" />
+    <ClInclude Include="SceneController.hpp" />
+    <ClInclude Include="SceneObject.hpp" />
+    <ClInclude Include="Settings.hpp" />
+    <ClInclude Include="Shader.hpp" />
+    <ClInclude Include="ShaderManager.hpp" />
+    <ClInclude Include="SOIL\image_DXT.h" />
+    <ClInclude Include="SOIL\image_helper.h" />
+    <ClInclude Include="SOIL\SOIL.h" />
+    <ClInclude Include="SOIL\stbi_DDS_aug.h" />
+    <ClInclude Include="SOIL\stbi_DDS_aug_c.h" />
+    <ClInclude Include="SOIL\stb_image_aug.h" />
+    <ClInclude Include="Structs.hpp" />
+    <ClInclude Include="Texture.hpp" />
+    <ClInclude Include="TextureSampler.hpp" />
+    <ClInclude Include="Types.hpp" />
+    <ClInclude Include="UnifiedMaterial.hpp" />
+    <ClInclude Include="Utilities.hpp" />
+    <ClInclude Include="Vector.hpp" />
+    <ClInclude Include="Vertex.hpp" />
+    <ClInclude Include="WindowController.hpp" />
+    <ClInclude Include="Window.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BasicFragment.glsl" />
+    <None Include="BasicFragment.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="BasicVertex.hlsl" />
+    <Text Include="BasicVertex.glsl">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </Text>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
